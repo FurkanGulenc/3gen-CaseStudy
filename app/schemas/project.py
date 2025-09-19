@@ -22,6 +22,10 @@ class ProjectUpdate(BaseModel):
     radius: Optional[int] = None
 
 
+class ProjectProcessRequest(BaseModel):
+    raw: ProjectUpdate
+    scaled: ProjectUpdate
+
 # ---------------------------
 # Project Response
 # ---------------------------

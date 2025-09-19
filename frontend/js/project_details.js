@@ -264,7 +264,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const relLeft = productObj.left - frameTLx;
     const relTop = productObj.top - frameTLy;
 
-    const coords = {
+    // 🟢 Raw (görünen değerler → DB için)
+    const rawCoords = {
+      pos_x: Math.round(relLeft),
+      pos_y: Math.round(relTop),
+      width: Math.round(productObj.getScaledWidth()),
+      height: Math.round(productObj.getScaledHeight()),
+      radius: parseInt(radiusInput.value) || 0,
+    };
+
+    // 🟢 Scaled (işlem için → backend task)
+    const scaledCoords = {
       pos_x: Math.round(relLeft * kx),
       pos_y: Math.round(relTop * ky),
       width: Math.round(productObj.getScaledWidth() * kx),
@@ -272,31 +282,17 @@ document.addEventListener("DOMContentLoaded", () => {
       radius: parseInt(radiusInput.value) || 0,
     };
 
-    console.log("[PROCESS DEBUG] coords=", coords);
+    console.log("[PROCESS DEBUG] raw=", rawCoords, "scaled=", scaledCoords);
 
     try {
-      const saveRes = await fetch(`${API_BASE}/projects/${projectId}/coords`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(coords),
-      });
-
-      if (!saveRes.ok) {
-        alert("Coords save failed!");
-        console.error(await saveRes.text());
-        return;
-      }
-
+      // 🔹 Artık /processor/:id/process endpoint'ine raw + scaled gönderiyoruz
       const res = await fetch(`${API_BASE}/processor/${projectId}/process`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(coords),
+        body: JSON.stringify({ raw: rawCoords, scaled: scaledCoords }),
       });
 
       if (!res.ok) {
@@ -312,6 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error starting process:", err);
     }
   });
+
 
   fetchProjectDetails();
 });
