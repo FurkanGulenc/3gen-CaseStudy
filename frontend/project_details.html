@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="project-wrapper">
+
+        <!-- Üst kısım: sol + sağ paneller -->
+        <div class="project-details-container">
+      
+          <!-- Sol panel -->
+          <div class="left-panel">
+            <div class="preview-section">
+                <div class="frame-preview">
+                  <canvas id="editorCanvas" width="800" height="600"></canvas>
+                </div>
+            </div>
+            <div class="coords-form">
+              <input type="number" id="posX" placeholder="X">
+              <input type="number" id="posY" placeholder="Y">
+              <input type="number" id="width" placeholder="Width">
+              <input type="number" id="height" placeholder="Height">
+              <input type="number" id="radius" placeholder="Radius">
+            </div>
+          </div>
+         
+      
+          <!-- Sağ panel -->
+          <div class="right-panel">
+            <div class="thumbnails-list">
+              <img src="https://cdn.goanalytix.io/assets/casestudy/images/1.jpg" alt="thumb1">
+              <img src="https://cdn.goanalytix.io/assets/casestudy/images/2.jpg" alt="thumb2">
+              <img src="https://cdn.goanalytix.io/assets/casestudy/images/3.jpg" alt="thumb3">
+              <img src="https://cdn.goanalytix.io/assets/casestudy/images/4.jpg" alt="thumb4">
+            </div>
+            <div class="save-panel">
+              <button id="saveCoords">Save</button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- En alttaki büyük buton -->
+        <div class="process-button">
+          <button id="startProcessing">Start Process</button>
+        </div>
+      
+      </div>
+      
+
+      <!-- Fabric.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.2.4/fabric.min.js"></script>
+
+
+    <script src="js/project_details.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Dropzone CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.css" />
+  <!-- DataTables CSS -->
+    <link rel="stylesheet" 
+    href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" />
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+</head>
+<body>
+    <div class="projects-container">
+      <!-- Üst Bar -->
+      <header class="projects-header">
+        <h1>Projects</h1>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </header>
+  
+      <!-- Arama ve Buton -->
+      <div class="projects-controls">
+        <!-- <div class="search-box">
+          <input type="text" placeholder="Search projects...">
+        </div> -->
+        <div class="new-project-btn">
+          <button id="openPopup">+ New Project</button>
+        </div> 
+      </div>
+  
+      <!-- Tablo -->
+      <table id="projectsTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Feed</th>
+            <th>Created At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS ile doldurulacak -->
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- 🔥 Popup artık en üst seviyede -->
+    <!-- Popup -->
+    <div id="popupOverlay" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+          <span id="closePopup" class="close-btn">&times;</span>
+          <h2>Create New Project</h2>
+          <form id="newProjectForm">
+            <input type="text" id="projectName" placeholder="Project Name" required>
+            <input type="url" id="feedUrl" placeholder="Feed URL" required>
+            <input type="file" id="frameUpload" accept="image/*" required>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+      </div>
+      
+  
+  
+    <script src="js/projects.js"></script>
+    <!-- Dropzone JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/dropzone.min.js"></script>
+
+  </body>
+  
+  
+</html>

@@ -1,0 +1,993 @@
+2025-09-18 10:08:29,750 [DEBUG] Using selector: KqueueSelector
+2025-09-18 10:08:29,750 [INFO] [DB] Looking for project 4
+2025-09-18 10:08:29,760 [INFO] select pg_catalog.version()
+2025-09-18 10:08:29,761 [INFO] [raw sql] ()
+2025-09-18 10:08:29,761 [INFO] select current_schema()
+2025-09-18 10:08:29,761 [INFO] [raw sql] ()
+2025-09-18 10:08:29,762 [INFO] show standard_conforming_strings
+2025-09-18 10:08:29,762 [INFO] [raw sql] ()
+2025-09-18 10:08:29,763 [INFO] BEGIN (implicit)
+2025-09-18 10:08:29,766 [INFO] SELECT projects.id, projects.user_id, projects.name, projects.feed_url, projects.frame_image, projects.pos_x, projects.pos_y, projects.width, projects.height, projects.created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:29,766 [INFO] [generated in 0.00013s] (4,)
+2025-09-18 10:08:29,769 [INFO] [DB] Found project: id=4, name=Default project1, feed_url=https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:08:29,769 [INFO] [DB] Frame coords: x=0, y=0, w=0, h=0
+2025-09-18 10:08:29,769 [INFO] [FEED] Downloading feed: https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:08:29,801 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:29,875 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x102e8a810>
+2025-09-18 10:08:29,875 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f68320> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:29,953 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103f92450>
+2025-09-18 10:08:29,953 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:29,953 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:29,954 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:29,954 [DEBUG] send_request_body.complete
+2025-09-18 10:08:29,954 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:30,483 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:30 GMT'), (b'Content-Type', b'text/xml'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'faH7h6tbLOtzh7AiM8gEJg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:22:52 GMT'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kdUixbg7%2BHsGbwlFVcq2Br8Vgiz%2FO3F3r%2BQLYDfud7YYYjIMGIKB1xOxS5%2BUVV%2B72DdL8BXCSsio6F%2FddPqdRETuV4cd4EadyvnPgH3jSYDE"}]}'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'e4d11b82-701e-0015-516b-281866000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'cf-cache-status', b'DYNAMIC'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Content-Encoding', b'zstd'), (b'CF-RAY', b'980f03310e6b9fff-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:30,483 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml "HTTP/1.1 200 OK"
+2025-09-18 10:08:30,483 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:30,483 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:30,483 [DEBUG] response_closed.started
+2025-09-18 10:08:30,483 [DEBUG] response_closed.complete
+2025-09-18 10:08:30,484 [DEBUG] close.started
+2025-09-18 10:08:30,484 [DEBUG] close.complete
+2025-09-18 10:08:30,484 [INFO] [FEED] Downloaded 1729 chars
+2025-09-18 10:08:30,484 [INFO] [FEED] Parsed XML, found 11 entries
+2025-09-18 10:08:30,484 [INFO] [FS] Output dir ready: media/outputs/4
+2025-09-18 10:08:30,498 [INFO] [FRAME] Loaded frame media/frames/sampleFrame.jpg size=1080x1080
+2025-09-18 10:08:30,499 [INFO] [ITEM 1] Start product_id=000000101929043004, url=https://cdn.goanalytix.io/assets/casestudy/images/1.jpg
+2025-09-18 10:08:30,505 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:30,581 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10402dd10>
+2025-09-18 10:08:30,582 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6ab10> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:30,662 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103dde410>
+2025-09-18 10:08:30,662 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:30,662 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:30,662 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:30,662 [DEBUG] send_request_body.complete
+2025-09-18 10:08:30,662 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:30,747 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:30 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'156270'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'f8mT77IP23nPAxrVn8T6sA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE38FE059'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'6f02b838-e01e-0017-786a-28a6de000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'264'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Cf%2FeoLN6zbEidtS5S7V82MCtwszeYRBzmpvRMf7nmwtmf0QG2WfqEBNuY4YMZzjLl4p15ZTfgSfj3wBtHIU%2FWtmlOE%2BIsE9oESfWqy1xnYhT"}]}'), (b'CF-RAY', b'980f033579cafff3-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:30,747 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/1.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:30,747 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:30,829 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:30,829 [DEBUG] response_closed.started
+2025-09-18 10:08:30,829 [DEBUG] response_closed.complete
+2025-09-18 10:08:30,829 [DEBUG] close.started
+2025-09-18 10:08:30,830 [DEBUG] close.complete
+2025-09-18 10:08:30,830 [INFO] [ITEM 1] Downloaded 156270 bytes
+2025-09-18 10:08:30,837 [INFO] [ITEM 1] Opened product image size=1200x1800
+2025-09-18 10:08:30,839 [INFO] ROLLBACK
+2025-09-18 10:08:30,840 [ERROR] [ITEM 1] ERROR: height and width must be > 0
+2025-09-18 10:08:30,840 [INFO] [ITEM 2] Start product_id=000000101929043005, url=https://cdn.goanalytix.io/assets/casestudy/images/2.jpg
+2025-09-18 10:08:30,847 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:30,921 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10403d090>
+2025-09-18 10:08:30,921 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6ae70> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:31,001 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10402fcd0>
+2025-09-18 10:08:31,001 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,001 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:31,001 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,002 [DEBUG] send_request_body.complete
+2025-09-18 10:08:31,002 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,089 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'179348'), (b'Connection', b'keep-alive'), (b'CF-RAY', b'980f03379e010b88-AMS'), (b'Content-MD5', b'l9E5SA2kWwNPzNXgya/+RA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE39118AD'), (b'x-ms-request-id', b'3863c997-f01e-0079-6f6a-28f3f1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'263'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ofS0a0hFDw68hWSIielGUJ1vxZuQBK71ZpOFnj72wMYhvP8TARYMYlkjIpajg3zMwfewDRxlmn3zYKLjqhL1OQi2C337oqOS6WruqTzzpmUsvgK%2Fi6klgIGZJQTIIHetV%2FZiNw%3D%3D"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Vary', b'Accept-Encoding'), (b'Server', b'cloudflare'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=73411&min_rtt=72081&rtt_var=21208&sent=5&recv=8&lost=0&retrans=0&sent_bytes=3934&recv_bytes=1821&delivery_rate=58005&cwnd=253&unsent_bytes=0&cid=90658ed211442274&ts=91&x=0"')])
+2025-09-18 10:08:31,090 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/2.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:31,090 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,173 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:31,174 [DEBUG] response_closed.started
+2025-09-18 10:08:31,174 [DEBUG] response_closed.complete
+2025-09-18 10:08:31,175 [DEBUG] close.started
+2025-09-18 10:08:31,175 [DEBUG] close.complete
+2025-09-18 10:08:31,175 [INFO] [ITEM 2] Downloaded 179348 bytes
+2025-09-18 10:08:31,191 [INFO] [ITEM 2] Opened product image size=1200x1800
+2025-09-18 10:08:31,192 [INFO] BEGIN (implicit)
+2025-09-18 10:08:31,193 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:31,193 [INFO] [generated in 0.00017s] (4,)
+2025-09-18 10:08:31,193 [INFO] ROLLBACK
+2025-09-18 10:08:31,194 [ERROR] [ITEM 2] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:31,194 [INFO] [ITEM 3] Start product_id=000000101929045001, url=https://cdn.goanalytix.io/assets/casestudy/images/3.jpg
+2025-09-18 10:08:31,204 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:31,277 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104050e50>
+2025-09-18 10:08:31,278 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b380> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:31,358 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104050d90>
+2025-09-18 10:08:31,359 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,359 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:31,359 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,359 [DEBUG] send_request_body.complete
+2025-09-18 10:08:31,359 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,445 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'137393'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'JNdyX2eV2Q+8SmoteKgCAw=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:04 GMT'), (b'ETag', b'0x8DDE96AE364DEEA'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c336158b-101e-0013-5b6a-282bd9000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'263'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=XKH0c3jV9Li%2BcJOJhk9wugfQLVGMwY56JJELaljJAKU87Vk4HwJZt5cpixcfKzedeDZ4gjbUu5TS3dv7OP4QdbXQTNcJ2aN7Cfi6BVy%2FzVX%2F"}]}'), (b'CF-RAY', b'980f0339dcd61c18-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:31,445 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/3.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:31,446 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,521 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:31,522 [DEBUG] response_closed.started
+2025-09-18 10:08:31,522 [DEBUG] response_closed.complete
+2025-09-18 10:08:31,522 [DEBUG] close.started
+2025-09-18 10:08:31,522 [DEBUG] close.complete
+2025-09-18 10:08:31,522 [INFO] [ITEM 3] Downloaded 137393 bytes
+2025-09-18 10:08:31,530 [INFO] [ITEM 3] Opened product image size=1200x1800
+2025-09-18 10:08:31,530 [INFO] BEGIN (implicit)
+2025-09-18 10:08:31,531 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:31,531 [INFO] [cached since 0.3376s ago] (4,)
+2025-09-18 10:08:31,531 [INFO] ROLLBACK
+2025-09-18 10:08:31,532 [ERROR] [ITEM 3] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:31,532 [INFO] [ITEM 4] Start product_id=000000101929045002, url=https://cdn.goanalytix.io/assets/casestudy/images/4.jpg
+2025-09-18 10:08:31,540 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:31,614 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10403de50>
+2025-09-18 10:08:31,615 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6ae70> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:31,694 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10403dd90>
+2025-09-18 10:08:31,695 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,695 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:31,696 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,696 [DEBUG] send_request_body.complete
+2025-09-18 10:08:31,696 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:31,777 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154288'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'AxPGgOMB/95Ye+cUR/p6Qg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE41180DC'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'4334d558-901e-0032-216a-280fa2000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'262'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EuP%2FdtRKFVL7q8xPYDRsrH%2BGarFCJubVnrl5j7wAHDaoKCPVWEsOTWrOKrF5c%2BOhS7FuxTifKONo7rBQtlhmyj81fjHA0weC2vWknYSbeEiU"}]}'), (b'CF-RAY', b'980f033bed358ed2-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:31,777 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/4.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:31,777 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:31,855 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:31,855 [DEBUG] response_closed.started
+2025-09-18 10:08:31,855 [DEBUG] response_closed.complete
+2025-09-18 10:08:31,855 [DEBUG] close.started
+2025-09-18 10:08:31,855 [DEBUG] close.complete
+2025-09-18 10:08:31,855 [INFO] [ITEM 4] Downloaded 154288 bytes
+2025-09-18 10:08:31,861 [INFO] [ITEM 4] Opened product image size=1200x1800
+2025-09-18 10:08:31,861 [INFO] BEGIN (implicit)
+2025-09-18 10:08:31,861 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:31,861 [INFO] [cached since 0.6682s ago] (4,)
+2025-09-18 10:08:31,861 [INFO] ROLLBACK
+2025-09-18 10:08:31,861 [ERROR] [ITEM 4] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:31,862 [INFO] [ITEM 5] Start product_id=000000101929045003, url=https://cdn.goanalytix.io/assets/casestudy/images/5.jpg
+2025-09-18 10:08:31,867 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:31,946 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104055790>
+2025-09-18 10:08:31,946 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:32,028 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1040556d0>
+2025-09-18 10:08:32,029 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,029 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:32,029 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,029 [DEBUG] send_request_body.complete
+2025-09-18 10:08:32,029 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,115 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:32 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'149245'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'5uudmqsNFwIQ+PcN6Yc8zA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3ABA1BC'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'8a52b362-801e-004c-7c6a-289fe5000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'261'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=oAgarTeBYjOI0cgJ2lIskywcjYOIfaKrwbSaHY4IKLhir46fNoTuCNSDqAg%2FTkm%2FJsCu0%2BR3YCjo7skM2tzFawYqQRJTeUmjRCnd3iO8z%2FIo"}]}'), (b'CF-RAY', b'980f033e0ee7f7ea-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:32,116 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/5.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:32,116 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,199 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:32,200 [DEBUG] response_closed.started
+2025-09-18 10:08:32,200 [DEBUG] response_closed.complete
+2025-09-18 10:08:32,201 [DEBUG] close.started
+2025-09-18 10:08:32,201 [DEBUG] close.complete
+2025-09-18 10:08:32,201 [INFO] [ITEM 5] Downloaded 149245 bytes
+2025-09-18 10:08:32,214 [INFO] [ITEM 5] Opened product image size=1200x1800
+2025-09-18 10:08:32,215 [INFO] BEGIN (implicit)
+2025-09-18 10:08:32,215 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:32,215 [INFO] [cached since 1.022s ago] (4,)
+2025-09-18 10:08:32,215 [INFO] ROLLBACK
+2025-09-18 10:08:32,216 [ERROR] [ITEM 5] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:32,216 [INFO] [ITEM 6] Start product_id=000000101929045004, url=https://cdn.goanalytix.io/assets/casestudy/images/6.jpg
+2025-09-18 10:08:32,225 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:32,302 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a08750>
+2025-09-18 10:08:32,302 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b6e0> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:32,385 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a08590>
+2025-09-18 10:08:32,386 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,386 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:32,386 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,386 [DEBUG] send_request_body.complete
+2025-09-18 10:08:32,387 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,468 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:32 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'138596'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'zLtCvwND43NRgGJqwTS/9A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE45906E1'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'05a4b66c-b01e-0035-476a-2863c1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'261'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=qPiMSZkaJeAFrttzu9pYecjES6OrHmLX8ccabAejusGJnvCdCzn7QA8Y4ZcivzCFDh%2FPp0rB9AiO%2F496Po9U9xfmCvnkfCDZ498T4uRbqgTi"}]}'), (b'CF-RAY', b'980f03403d755392-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:32,469 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/6.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:32,469 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,547 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:32,547 [DEBUG] response_closed.started
+2025-09-18 10:08:32,547 [DEBUG] response_closed.complete
+2025-09-18 10:08:32,548 [DEBUG] close.started
+2025-09-18 10:08:32,548 [DEBUG] close.complete
+2025-09-18 10:08:32,548 [INFO] [ITEM 6] Downloaded 138596 bytes
+2025-09-18 10:08:32,556 [INFO] [ITEM 6] Opened product image size=1200x1800
+2025-09-18 10:08:32,557 [INFO] BEGIN (implicit)
+2025-09-18 10:08:32,557 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:32,557 [INFO] [cached since 1.364s ago] (4,)
+2025-09-18 10:08:32,557 [INFO] ROLLBACK
+2025-09-18 10:08:32,557 [ERROR] [ITEM 6] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:32,557 [INFO] [ITEM 7] Start product_id=000000101929045005, url=https://cdn.goanalytix.io/assets/casestudy/images/7.jpg
+2025-09-18 10:08:32,568 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:32,648 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104054d50>
+2025-09-18 10:08:32,648 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b890> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:32,732 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x100eaba50>
+2025-09-18 10:08:32,733 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,734 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:32,734 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,734 [DEBUG] send_request_body.complete
+2025-09-18 10:08:32,734 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:32,821 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:33 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154138'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'Tm3kdU8IAQRrYIBvgIBonA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3FE49BD'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'508dac52-201e-006a-136a-28d7fd000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'260'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=789QZfT6fPCMcCG7N%2BlKrFZLonXKE4CBJNUA%2BTJCti%2BRQZ7pdMREyJX6u89Mi5zzmrLCuT3t9e%2BBbK4MXOJ29dMnY1o%2BZiSy%2F%2Bg2JzZqcXYi"}]}'), (b'CF-RAY', b'980f03426840b93e-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:32,821 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/7.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:32,821 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:32,917 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:32,917 [DEBUG] response_closed.started
+2025-09-18 10:08:32,917 [DEBUG] response_closed.complete
+2025-09-18 10:08:32,917 [DEBUG] close.started
+2025-09-18 10:08:32,917 [DEBUG] close.complete
+2025-09-18 10:08:32,917 [INFO] [ITEM 7] Downloaded 154138 bytes
+2025-09-18 10:08:32,922 [INFO] [ITEM 7] Opened product image size=1200x1800
+2025-09-18 10:08:32,922 [INFO] BEGIN (implicit)
+2025-09-18 10:08:32,923 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:32,923 [INFO] [cached since 1.73s ago] (4,)
+2025-09-18 10:08:32,923 [INFO] ROLLBACK
+2025-09-18 10:08:32,923 [ERROR] [ITEM 7] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:32,923 [INFO] [ITEM 8] Start product_id=000000101929049001, url=https://cdn.goanalytix.io/assets/casestudy/images/8.jpg
+2025-09-18 10:08:32,928 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:33,007 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104054450>
+2025-09-18 10:08:33,007 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b530> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:33,095 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103d7b110>
+2025-09-18 10:08:33,095 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,095 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:33,095 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,095 [DEBUG] send_request_body.complete
+2025-09-18 10:08:33,095 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,187 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:33 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'160299'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'qBDAKcDQsyVqhBYWOUOZSg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE433A9F5'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'3264f817-b01e-000a-4d6a-28ab62000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'258'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=PSTKrEnl7VOxxRQMkqlaidI4yVHxz1SFs0u%2Bqz0ES0j3FJMYyweb4wqwyg%2BeK5HcUqgn4d1S65KQjLKFOyB8xKca8IFU5kQGJDCy91aqgJmL"}]}'), (b'CF-RAY', b'980f0344aeb9b975-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:33,187 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/8.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:33,187 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,269 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:33,269 [DEBUG] response_closed.started
+2025-09-18 10:08:33,269 [DEBUG] response_closed.complete
+2025-09-18 10:08:33,269 [DEBUG] close.started
+2025-09-18 10:08:33,269 [DEBUG] close.complete
+2025-09-18 10:08:33,269 [INFO] [ITEM 8] Downloaded 160299 bytes
+2025-09-18 10:08:33,276 [INFO] [ITEM 8] Opened product image size=1200x1800
+2025-09-18 10:08:33,276 [INFO] BEGIN (implicit)
+2025-09-18 10:08:33,276 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:33,276 [INFO] [cached since 2.083s ago] (4,)
+2025-09-18 10:08:33,276 [INFO] ROLLBACK
+2025-09-18 10:08:33,277 [ERROR] [ITEM 8] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:33,277 [INFO] [ITEM 9] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/9.jpg
+2025-09-18 10:08:33,283 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:33,359 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a0a5d0>
+2025-09-18 10:08:33,359 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:33,440 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a0a590>
+2025-09-18 10:08:33,440 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,440 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:33,440 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,440 [DEBUG] send_request_body.complete
+2025-09-18 10:08:33,440 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,524 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:33 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'159203'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'ewWY6dMtwM9phe6FGO239w=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE458DFD3'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'e25ec6f8-301e-0049-7a6a-284d3e000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'257'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ubC2HRuYIQhxlGuC69uvUlBkasudmbn4orUo7F9lnhKsU28AlY27CkXPl%2F0bQH3WEvPRgO4G2vaQiXma8K7UeymFMpKYMfLL6WE4Wn5jA%2FTR"}]}'), (b'CF-RAY', b'980f0346de219724-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:33,524 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/9.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:33,524 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,608 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:33,608 [DEBUG] response_closed.started
+2025-09-18 10:08:33,608 [DEBUG] response_closed.complete
+2025-09-18 10:08:33,608 [DEBUG] close.started
+2025-09-18 10:08:33,608 [DEBUG] close.complete
+2025-09-18 10:08:33,608 [INFO] [ITEM 9] Downloaded 159203 bytes
+2025-09-18 10:08:33,616 [INFO] [ITEM 9] Opened product image size=1200x1800
+2025-09-18 10:08:33,616 [INFO] BEGIN (implicit)
+2025-09-18 10:08:33,616 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:33,616 [INFO] [cached since 2.423s ago] (4,)
+2025-09-18 10:08:33,616 [INFO] ROLLBACK
+2025-09-18 10:08:33,617 [ERROR] [ITEM 9] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:33,617 [INFO] [ITEM 10] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/10.jpg
+2025-09-18 10:08:33,624 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:33,698 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a1db90>
+2025-09-18 10:08:33,698 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6ae70> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:33,782 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x106a0b890>
+2025-09-18 10:08:33,782 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,783 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:33,783 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,783 [DEBUG] send_request_body.complete
+2025-09-18 10:08:33,783 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:33,866 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:34 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'133560'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'MTBuHpGH4Wsa80wm245lHA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE4831E16'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'18f20d75-201e-0037-736a-28dd79000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'256'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9Oh5sat%2BSTLkj%2B3jUUEPwH8yobt%2Fv6oViwoD6aGWhjUy%2BiOBg4bYuOFXADn69CD4RIQAw2vV2a9%2FTA4%2BzxUK5p4E8Z2uwThfaEK%2BovSzdAHM"}]}'), (b'CF-RAY', b'980f0348fcbd9f87-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:33,867 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/10.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:33,867 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:33,944 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:33,944 [DEBUG] response_closed.started
+2025-09-18 10:08:33,945 [DEBUG] response_closed.complete
+2025-09-18 10:08:33,945 [DEBUG] close.started
+2025-09-18 10:08:33,945 [DEBUG] close.complete
+2025-09-18 10:08:33,945 [INFO] [ITEM 10] Downloaded 133560 bytes
+2025-09-18 10:08:33,949 [INFO] [ITEM 10] Opened product image size=1200x1800
+2025-09-18 10:08:33,949 [INFO] BEGIN (implicit)
+2025-09-18 10:08:33,949 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:33,949 [INFO] [cached since 2.756s ago] (4,)
+2025-09-18 10:08:33,951 [INFO] ROLLBACK
+2025-09-18 10:08:33,951 [ERROR] [ITEM 10] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:33,951 [INFO] [ITEM 11] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/11.jpg
+2025-09-18 10:08:33,968 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:08:34,042 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x104052110>
+2025-09-18 10:08:34,042 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x103f6b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:08:34,121 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103da3d10>
+2025-09-18 10:08:34,121 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:34,121 [DEBUG] send_request_headers.complete
+2025-09-18 10:08:34,121 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:08:34,121 [DEBUG] send_request_body.complete
+2025-09-18 10:08:34,121 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:08:34,204 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:08:34 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'72335'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'bQbp/9n/vDHvK951c8VU+A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE47F751B'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c7d004e0-001e-0020-526a-287472000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'256'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=3OCM3eqSrGefm1wpc5KL2DBMjC7QqvBFMCgYlwFia7nC7H6efXIR16gr%2Bo1qd4rEZ8IzGWD2K5A08f47b20HFKdnWlPB0QUEuJtPH6%2F0T3hS"}]}'), (b'CF-RAY', b'980f034b1dff9fd6-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:08:34,204 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/11.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:08:34,204 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:08:34,213 [DEBUG] receive_response_body.complete
+2025-09-18 10:08:34,213 [DEBUG] response_closed.started
+2025-09-18 10:08:34,214 [DEBUG] response_closed.complete
+2025-09-18 10:08:34,214 [DEBUG] close.started
+2025-09-18 10:08:34,214 [DEBUG] close.complete
+2025-09-18 10:08:34,214 [INFO] [ITEM 11] Downloaded 72335 bytes
+2025-09-18 10:08:34,221 [INFO] [ITEM 11] Opened product image size=1200x1800
+2025-09-18 10:08:34,221 [INFO] BEGIN (implicit)
+2025-09-18 10:08:34,221 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:08:34,221 [INFO] [cached since 3.028s ago] (4,)
+2025-09-18 10:08:34,222 [INFO] ROLLBACK
+2025-09-18 10:08:34,222 [ERROR] [ITEM 11] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:08:34,222 [INFO] [SUMMARY] total=11, success=0, failed=11
+2025-09-18 10:10:07,918 [DEBUG] Using selector: KqueueSelector
+2025-09-18 10:10:07,919 [INFO] [DB] Looking for project 2
+2025-09-18 10:10:07,930 [INFO] select pg_catalog.version()
+2025-09-18 10:10:07,930 [INFO] [raw sql] ()
+2025-09-18 10:10:07,931 [INFO] select current_schema()
+2025-09-18 10:10:07,931 [INFO] [raw sql] ()
+2025-09-18 10:10:07,931 [INFO] show standard_conforming_strings
+2025-09-18 10:10:07,931 [INFO] [raw sql] ()
+2025-09-18 10:10:07,932 [INFO] BEGIN (implicit)
+2025-09-18 10:10:07,935 [INFO] SELECT projects.id, projects.user_id, projects.name, projects.feed_url, projects.frame_image, projects.pos_x, projects.pos_y, projects.width, projects.height, projects.created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:07,935 [INFO] [generated in 0.00007s] (2,)
+2025-09-18 10:10:07,937 [INFO] [DB] Found project: id=2, name=testProject1, feed_url=https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:10:07,937 [INFO] [DB] Frame coords: x=0, y=0, w=0, h=0
+2025-09-18 10:10:07,937 [INFO] [FEED] Downloading feed: https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:10:07,968 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:08,049 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a015210>
+2025-09-18 10:10:08,049 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a008320> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:08,131 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0324d0>
+2025-09-18 10:10:08,132 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:08,132 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:08,132 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:08,132 [DEBUG] send_request_body.complete
+2025-09-18 10:10:08,132 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:08,664 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:08 GMT'), (b'Content-Type', b'text/xml'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'faH7h6tbLOtzh7AiM8gEJg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:22:52 GMT'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1FL6l%2F2T39bgsFujVCdHfykTzLyUgZFSMBH1A4aXkZpcHULHrcoIi4vKgbB97TMl15%2FpB8Prf0hc7j2IKnBbDlsz%2FocEBlSyYlUFzhcol88m"}]}'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'a8ca2dc2-501e-005f-326b-28bbe9000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'cf-cache-status', b'DYNAMIC'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Content-Encoding', b'zstd'), (b'CF-RAY', b'980f0596ab8a3ed0-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:08,664 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml "HTTP/1.1 200 OK"
+2025-09-18 10:10:08,664 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:08,665 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:08,665 [DEBUG] response_closed.started
+2025-09-18 10:10:08,665 [DEBUG] response_closed.complete
+2025-09-18 10:10:08,665 [DEBUG] close.started
+2025-09-18 10:10:08,665 [DEBUG] close.complete
+2025-09-18 10:10:08,665 [INFO] [FEED] Downloaded 1729 chars
+2025-09-18 10:10:08,666 [INFO] [FEED] Parsed XML, found 11 entries
+2025-09-18 10:10:08,666 [INFO] [FS] Output dir ready: media/outputs/2
+2025-09-18 10:10:08,681 [INFO] [FRAME] Loaded frame media/frames/sampleFrame.jpg size=1080x1080
+2025-09-18 10:10:08,681 [INFO] [ITEM 1] Start product_id=000000101929043004, url=https://cdn.goanalytix.io/assets/casestudy/images/1.jpg
+2025-09-18 10:10:08,687 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:08,762 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0d1ad0>
+2025-09-18 10:10:08,762 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00ab10> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:08,840 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103e26b50>
+2025-09-18 10:10:08,841 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:08,841 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:08,841 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:08,841 [DEBUG] send_request_body.complete
+2025-09-18 10:10:08,841 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:08,923 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:09 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'156270'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'f8mT77IP23nPAxrVn8T6sA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE38FE059'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'6f02b838-e01e-0017-786a-28a6de000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'362'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=kVIdvguArhzhoGbJq1kkmfkn6fEGlj5qswpm6Kehz99GqehRHwRS07rj6GwfMzM3H4g7Qbr1qtTHciicj%2BHuSoZLL%2BMh3F1guwtUBp9tWhcs"}]}'), (b'CF-RAY', b'980f059b181c1a59-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:08,924 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/1.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:08,924 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,001 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:09,001 [DEBUG] response_closed.started
+2025-09-18 10:10:09,001 [DEBUG] response_closed.complete
+2025-09-18 10:10:09,001 [DEBUG] close.started
+2025-09-18 10:10:09,002 [DEBUG] close.complete
+2025-09-18 10:10:09,002 [INFO] [ITEM 1] Downloaded 156270 bytes
+2025-09-18 10:10:09,009 [INFO] [ITEM 1] Opened product image size=1200x1800
+2025-09-18 10:10:09,010 [INFO] ROLLBACK
+2025-09-18 10:10:09,011 [ERROR] [ITEM 1] ERROR: height and width must be > 0
+2025-09-18 10:10:09,011 [INFO] [ITEM 2] Start product_id=000000101929043005, url=https://cdn.goanalytix.io/assets/casestudy/images/2.jpg
+2025-09-18 10:10:09,018 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:09,095 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0dd090>
+2025-09-18 10:10:09,095 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00ae70> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:09,177 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0d2850>
+2025-09-18 10:10:09,177 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,178 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:09,178 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,178 [DEBUG] send_request_body.complete
+2025-09-18 10:10:09,178 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,264 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:09 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'179348'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'l9E5SA2kWwNPzNXgya/+RA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE39118AD'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'3863c997-f01e-0079-6f6a-28f3f1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'361'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=nOaYVxGNlwkvRo0jyQYvkvfnvzXBypKAgBn49U6%2FHFdB1UwV6v%2BzWedTbk5IzbHguv34kvKa6E5m1AxCQz7k7wf4oMdxqbL5LQftA2xfNqPB"}]}'), (b'CF-RAY', b'980f059d3efd3ee4-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:09,264 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/2.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:09,264 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,352 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:09,352 [DEBUG] response_closed.started
+2025-09-18 10:10:09,352 [DEBUG] response_closed.complete
+2025-09-18 10:10:09,353 [DEBUG] close.started
+2025-09-18 10:10:09,353 [DEBUG] close.complete
+2025-09-18 10:10:09,353 [INFO] [ITEM 2] Downloaded 179348 bytes
+2025-09-18 10:10:09,362 [INFO] [ITEM 2] Opened product image size=1200x1800
+2025-09-18 10:10:09,363 [INFO] BEGIN (implicit)
+2025-09-18 10:10:09,364 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:09,364 [INFO] [generated in 0.00012s] (2,)
+2025-09-18 10:10:09,364 [INFO] ROLLBACK
+2025-09-18 10:10:09,364 [ERROR] [ITEM 2] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:09,364 [INFO] [ITEM 3] Start product_id=000000101929045001, url=https://cdn.goanalytix.io/assets/casestudy/images/3.jpg
+2025-09-18 10:10:09,372 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:09,449 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f0c10>
+2025-09-18 10:10:09,449 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b380> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:09,530 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f0b50>
+2025-09-18 10:10:09,531 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,531 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:09,531 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,531 [DEBUG] send_request_body.complete
+2025-09-18 10:10:09,531 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,617 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:09 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'137393'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'JNdyX2eV2Q+8SmoteKgCAw=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:04 GMT'), (b'ETag', b'0x8DDE96AE364DEEA'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c336158b-101e-0013-5b6a-282bd9000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'361'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=m7nHyby3t4is8mrMHR2vv7occ4f%2BnvyWvBWsTY1PdZpWcOo68HwPFRNoxOvBs5WjafQVDFcmFc7SUZVmLL67rmuztvQJKB%2Fdwn1mfiS4w9Pi"}]}'), (b'CF-RAY', b'980f059f6fc4c23f-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:09,618 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/3.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:09,618 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,701 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:09,701 [DEBUG] response_closed.started
+2025-09-18 10:10:09,702 [DEBUG] response_closed.complete
+2025-09-18 10:10:09,702 [DEBUG] close.started
+2025-09-18 10:10:09,703 [DEBUG] close.complete
+2025-09-18 10:10:09,703 [INFO] [ITEM 3] Downloaded 137393 bytes
+2025-09-18 10:10:09,713 [INFO] [ITEM 3] Opened product image size=1200x1800
+2025-09-18 10:10:09,713 [INFO] BEGIN (implicit)
+2025-09-18 10:10:09,713 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:09,714 [INFO] [cached since 0.3497s ago] (2,)
+2025-09-18 10:10:09,715 [INFO] ROLLBACK
+2025-09-18 10:10:09,715 [ERROR] [ITEM 3] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:09,715 [INFO] [ITEM 4] Start product_id=000000101929045002, url=https://cdn.goanalytix.io/assets/casestudy/images/4.jpg
+2025-09-18 10:10:09,723 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:09,802 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0dd090>
+2025-09-18 10:10:09,802 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00ae70> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:09,886 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0dcb10>
+2025-09-18 10:10:09,886 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,886 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:09,886 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:09,887 [DEBUG] send_request_body.complete
+2025-09-18 10:10:09,887 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:09,975 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:10 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154288'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'AxPGgOMB/95Ye+cUR/p6Qg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE41180DC'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'4334d558-901e-0032-216a-280fa2000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'360'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SVTgJ%2FwbwUtc8%2B%2FUaaEZJL2SW2QrfJY8x61VJYl%2FZWSpz6bilP2pRb9poVVZJBOBhv3DG9ja30DfJfNbPdtsrRNrSJP0VY4yS5ylG2y4hQ%3D%3D"}]}'), (b'CF-RAY', b'980f05a19ba6f5e7-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:09,976 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/4.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:09,976 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,056 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:10,056 [DEBUG] response_closed.started
+2025-09-18 10:10:10,057 [DEBUG] response_closed.complete
+2025-09-18 10:10:10,057 [DEBUG] close.started
+2025-09-18 10:10:10,057 [DEBUG] close.complete
+2025-09-18 10:10:10,057 [INFO] [ITEM 4] Downloaded 154288 bytes
+2025-09-18 10:10:10,067 [INFO] [ITEM 4] Opened product image size=1200x1800
+2025-09-18 10:10:10,067 [INFO] BEGIN (implicit)
+2025-09-18 10:10:10,067 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:10,067 [INFO] [cached since 0.7034s ago] (2,)
+2025-09-18 10:10:10,067 [INFO] ROLLBACK
+2025-09-18 10:10:10,068 [ERROR] [ITEM 4] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:10,068 [INFO] [ITEM 5] Start product_id=000000101929045003, url=https://cdn.goanalytix.io/assets/casestudy/images/5.jpg
+2025-09-18 10:10:10,076 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:10,151 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f5990>
+2025-09-18 10:10:10,151 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:10,234 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f58d0>
+2025-09-18 10:10:10,235 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:10,235 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:10,236 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,236 [DEBUG] send_request_body.complete
+2025-09-18 10:10:10,236 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:10,327 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:10 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'149245'), (b'Connection', b'keep-alive'), (b'CF-RAY', b'980f05a3c86bc73c-AMS'), (b'Content-MD5', b'5uudmqsNFwIQ+PcN6Yc8zA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3ABA1BC'), (b'x-ms-request-id', b'8a52b362-801e-004c-7c6a-289fe5000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'359'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=EcdHxOQwJg%2FtRDRKnwJV%2FqvXdZXRQj2jPOf3tglKOdyl6YENgBYlxymm6ZVBEW6egpf0iDjp3u%2BVJqLkb%2Fqs6zbpLugpoAI1g7mxg%2B4LDoORCNPmjgJ5aUzW6MstxD%2BozGwtTA%3D%3D"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Vary', b'Accept-Encoding'), (b'Server', b'cloudflare'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=72860&min_rtt=72749&rtt_var=27504&sent=5&recv=8&lost=0&retrans=0&sent_bytes=3933&recv_bytes=1821&delivery_rate=58661&cwnd=253&unsent_bytes=0&cid=f18217e79aeefb94&ts=101&x=0"')])
+2025-09-18 10:10:10,328 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/5.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:10,328 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,417 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:10,417 [DEBUG] response_closed.started
+2025-09-18 10:10:10,417 [DEBUG] response_closed.complete
+2025-09-18 10:10:10,418 [DEBUG] close.started
+2025-09-18 10:10:10,418 [DEBUG] close.complete
+2025-09-18 10:10:10,418 [INFO] [ITEM 5] Downloaded 149245 bytes
+2025-09-18 10:10:10,429 [INFO] [ITEM 5] Opened product image size=1200x1800
+2025-09-18 10:10:10,429 [INFO] BEGIN (implicit)
+2025-09-18 10:10:10,430 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:10,430 [INFO] [cached since 1.066s ago] (2,)
+2025-09-18 10:10:10,430 [INFO] ROLLBACK
+2025-09-18 10:10:10,430 [ERROR] [ITEM 5] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:10,431 [INFO] [ITEM 6] Start product_id=000000101929045004, url=https://cdn.goanalytix.io/assets/casestudy/images/6.jpg
+2025-09-18 10:10:10,439 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:10,513 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad04910>
+2025-09-18 10:10:10,513 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b650> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:10,592 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad04850>
+2025-09-18 10:10:10,595 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:10,595 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:10,595 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,595 [DEBUG] send_request_body.complete
+2025-09-18 10:10:10,596 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:10,680 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:10 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'138596'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'zLtCvwND43NRgGJqwTS/9A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE45906E1'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'05a4b66c-b01e-0035-476a-2863c1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'359'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FiU5nB9%2Bj%2BxZeUtPWwwb%2F%2Bk61J4lZrFFJ3aB%2FHIIuN9O%2BvoroaLXdaOk04XJe9ED7LywRFPvxJQXiaM51myqnNsLcyaP2YzEhXHr8pCZIybw"}]}'), (b'CF-RAY', b'980f05a60bad9a64-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:10,681 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/6.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:10,682 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,757 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:10,758 [DEBUG] response_closed.started
+2025-09-18 10:10:10,758 [DEBUG] response_closed.complete
+2025-09-18 10:10:10,758 [DEBUG] close.started
+2025-09-18 10:10:10,759 [DEBUG] close.complete
+2025-09-18 10:10:10,759 [INFO] [ITEM 6] Downloaded 138596 bytes
+2025-09-18 10:10:10,771 [INFO] [ITEM 6] Opened product image size=1200x1800
+2025-09-18 10:10:10,771 [INFO] BEGIN (implicit)
+2025-09-18 10:10:10,772 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:10,772 [INFO] [cached since 1.408s ago] (2,)
+2025-09-18 10:10:10,772 [INFO] ROLLBACK
+2025-09-18 10:10:10,772 [ERROR] [ITEM 6] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:10,772 [INFO] [ITEM 7] Start product_id=000000101929045005, url=https://cdn.goanalytix.io/assets/casestudy/images/7.jpg
+2025-09-18 10:10:10,782 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:10,854 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103dbf810>
+2025-09-18 10:10:10,855 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b770> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:10,933 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a052d50>
+2025-09-18 10:10:10,934 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:10,934 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:10,934 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:10,935 [DEBUG] send_request_body.complete
+2025-09-18 10:10:10,935 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:11,018 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:11 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154138'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'Tm3kdU8IAQRrYIBvgIBonA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3FE49BD'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'508dac52-201e-006a-136a-28d7fd000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'358'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=%2FId7vgZmMtJcTjfh0SRDWjrCDRtcfhK9%2FEtydI7B%2FM0evVlFcRrMmlesvnppT%2FEAkVR61jvsqh7Bzd%2FN044YptSmEO6ucGv%2F8ZsUAYHS2w22"}]}'), (b'CF-RAY', b'980f05a82acbdce7-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:11,018 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/7.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:11,018 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:11,091 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:11,091 [DEBUG] response_closed.started
+2025-09-18 10:10:11,091 [DEBUG] response_closed.complete
+2025-09-18 10:10:11,092 [DEBUG] close.started
+2025-09-18 10:10:11,092 [DEBUG] close.complete
+2025-09-18 10:10:11,092 [INFO] [ITEM 7] Downloaded 154138 bytes
+2025-09-18 10:10:11,100 [INFO] [ITEM 7] Opened product image size=1200x1800
+2025-09-18 10:10:11,100 [INFO] BEGIN (implicit)
+2025-09-18 10:10:11,101 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:11,101 [INFO] [cached since 1.737s ago] (2,)
+2025-09-18 10:10:11,101 [INFO] ROLLBACK
+2025-09-18 10:10:11,101 [ERROR] [ITEM 7] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:11,101 [INFO] [ITEM 8] Start product_id=000000101929049001, url=https://cdn.goanalytix.io/assets/casestudy/images/8.jpg
+2025-09-18 10:10:11,109 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:11,183 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f43d0>
+2025-09-18 10:10:11,183 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b530> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:11,265 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0f45d0>
+2025-09-18 10:10:11,266 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:11,266 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:11,266 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:11,266 [DEBUG] send_request_body.complete
+2025-09-18 10:10:11,267 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:11,352 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:11 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'160299'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'qBDAKcDQsyVqhBYWOUOZSg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE433A9F5'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'3264f817-b01e-000a-4d6a-28ab62000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'356'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=s%2Boi7PwRHCMlN3LIXc7PjBvMPgU1PX2spz7%2Ft17%2FjV4TbsiYBPAYIHGlO0Fqbn2thKvY1dcOEjSCyLNeWRCFv6QG10PbfF3eZIrla0O8ODej"}]}'), (b'CF-RAY', b'980f05aa3ffc65f5-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:11,352 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/8.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:11,353 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:11,435 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:11,436 [DEBUG] response_closed.started
+2025-09-18 10:10:11,436 [DEBUG] response_closed.complete
+2025-09-18 10:10:11,436 [DEBUG] close.started
+2025-09-18 10:10:11,437 [DEBUG] close.complete
+2025-09-18 10:10:11,437 [INFO] [ITEM 8] Downloaded 160299 bytes
+2025-09-18 10:10:11,449 [INFO] [ITEM 8] Opened product image size=1200x1800
+2025-09-18 10:10:11,450 [INFO] BEGIN (implicit)
+2025-09-18 10:10:11,450 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:11,450 [INFO] [cached since 2.086s ago] (2,)
+2025-09-18 10:10:11,450 [INFO] ROLLBACK
+2025-09-18 10:10:11,450 [ERROR] [ITEM 8] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:11,450 [INFO] [ITEM 9] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/9.jpg
+2025-09-18 10:10:11,460 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:11,539 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad04c50>
+2025-09-18 10:10:11,539 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:11,624 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad05890>
+2025-09-18 10:10:11,625 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:11,625 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:11,625 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:11,625 [DEBUG] send_request_body.complete
+2025-09-18 10:10:11,625 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:11,729 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:11 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'159203'), (b'Connection', b'keep-alive'), (b'CF-RAY', b'980f05ac78819f8d-AMS'), (b'Content-MD5', b'ewWY6dMtwM9phe6FGO239w=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE458DFD3'), (b'x-ms-request-id', b'e25ec6f8-301e-0049-7a6a-284d3e000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'355'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Report-To', b'{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=g16T1wicDdGZPIPNk6jdmC7VmVMhZS5mXOfVVXaxidiPeTrgDhdfubGg3oCOYtH%2Bg4OsLXIwzqX6GZf9YG41VpAHhd3y45fTD9ptV65AHwdbpIkHahWPKwKrBzVR4LHpFRnZHA%3D%3D"}],"group":"cf-nel","max_age":604800}'), (b'NEL', b'{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'), (b'Vary', b'Accept-Encoding'), (b'Server', b'cloudflare'), (b'alt-svc', b'h3=":443"; ma=86400'), (b'server-timing', b'cfL4;desc="?proto=TCP&rtt=76013&min_rtt=75994&rtt_var=28537&sent=8&recv=9&lost=0&retrans=0&sent_bytes=3934&recv_bytes=1821&delivery_rate=56728&cwnd=142&unsent_bytes=0&cid=1a9971a7615d051a&ts=111&x=0"')])
+2025-09-18 10:10:11,730 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/9.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:11,730 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:11,961 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:11,962 [DEBUG] response_closed.started
+2025-09-18 10:10:11,962 [DEBUG] response_closed.complete
+2025-09-18 10:10:11,963 [DEBUG] close.started
+2025-09-18 10:10:11,963 [DEBUG] close.complete
+2025-09-18 10:10:11,963 [INFO] [ITEM 9] Downloaded 159203 bytes
+2025-09-18 10:10:11,976 [INFO] [ITEM 9] Opened product image size=1200x1800
+2025-09-18 10:10:11,976 [INFO] BEGIN (implicit)
+2025-09-18 10:10:11,976 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:11,976 [INFO] [cached since 2.612s ago] (2,)
+2025-09-18 10:10:11,977 [INFO] ROLLBACK
+2025-09-18 10:10:11,977 [ERROR] [ITEM 9] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:11,977 [INFO] [ITEM 10] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/10.jpg
+2025-09-18 10:10:11,985 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:12,062 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad19a90>
+2025-09-18 10:10:12,063 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b4a0> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:12,145 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10ad199d0>
+2025-09-18 10:10:12,146 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:12,146 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:12,146 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:12,146 [DEBUG] send_request_body.complete
+2025-09-18 10:10:12,147 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:12,238 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:12 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'133560'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'MTBuHpGH4Wsa80wm245lHA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE4831E16'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'18f20d75-201e-0037-736a-28dd79000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'355'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=8S8SDcfS1xEWyrEdBZ0zKNyXRpB8I2pMkeTHKK1iut9YxVER%2B3KUqsPJqet7VC%2FboqlTv9k1Xycj5uQgASWfc%2BvzXNxESoYF7qX3dnuNcg%3D%3D"}]}'), (b'CF-RAY', b'980f05afba9bf5c1-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:12,239 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/10.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:12,239 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:12,317 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:12,317 [DEBUG] response_closed.started
+2025-09-18 10:10:12,318 [DEBUG] response_closed.complete
+2025-09-18 10:10:12,318 [DEBUG] close.started
+2025-09-18 10:10:12,319 [DEBUG] close.complete
+2025-09-18 10:10:12,319 [INFO] [ITEM 10] Downloaded 133560 bytes
+2025-09-18 10:10:12,331 [INFO] [ITEM 10] Opened product image size=1200x1800
+2025-09-18 10:10:12,332 [INFO] BEGIN (implicit)
+2025-09-18 10:10:12,332 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:12,332 [INFO] [cached since 2.969s ago] (2,)
+2025-09-18 10:10:12,336 [INFO] ROLLBACK
+2025-09-18 10:10:12,336 [ERROR] [ITEM 10] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:12,336 [INFO] [ITEM 11] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/11.jpg
+2025-09-18 10:10:12,345 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:10:12,422 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x103f9eb10>
+2025-09-18 10:10:12,422 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10a00b410> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:10:12,505 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x10a0dd610>
+2025-09-18 10:10:12,505 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:12,506 [DEBUG] send_request_headers.complete
+2025-09-18 10:10:12,506 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:10:12,506 [DEBUG] send_request_body.complete
+2025-09-18 10:10:12,506 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:10:12,594 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:10:12 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'72335'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'bQbp/9n/vDHvK951c8VU+A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE47F751B'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c7d004e0-001e-0020-526a-287472000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'354'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=A4ei8mjcqgdKp%2B43Z2g%2B3r3N1htxhcui06n0Xq4S3cWkOIhSgMhYeM6fSnmEV8smlg8OvotQLwQkur%2BQRnP0uIwqVOnjl4JmFHphjR%2FHx4tt"}]}'), (b'CF-RAY', b'980f05b208a38e3f-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:10:12,595 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/11.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:10:12,596 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:10:12,599 [DEBUG] receive_response_body.complete
+2025-09-18 10:10:12,599 [DEBUG] response_closed.started
+2025-09-18 10:10:12,601 [DEBUG] response_closed.complete
+2025-09-18 10:10:12,602 [DEBUG] close.started
+2025-09-18 10:10:12,602 [DEBUG] close.complete
+2025-09-18 10:10:12,602 [INFO] [ITEM 11] Downloaded 72335 bytes
+2025-09-18 10:10:12,610 [INFO] [ITEM 11] Opened product image size=1200x1800
+2025-09-18 10:10:12,611 [INFO] BEGIN (implicit)
+2025-09-18 10:10:12,611 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:10:12,611 [INFO] [cached since 3.247s ago] (2,)
+2025-09-18 10:10:12,611 [INFO] ROLLBACK
+2025-09-18 10:10:12,611 [ERROR] [ITEM 11] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:10:12,611 [INFO] [SUMMARY] total=11, success=0, failed=11
+2025-09-18 10:11:30,344 [DEBUG] Using selector: KqueueSelector
+2025-09-18 10:11:30,345 [INFO] [DB] Looking for project 3
+2025-09-18 10:11:30,356 [INFO] select pg_catalog.version()
+2025-09-18 10:11:30,356 [INFO] [raw sql] ()
+2025-09-18 10:11:30,357 [INFO] select current_schema()
+2025-09-18 10:11:30,357 [INFO] [raw sql] ()
+2025-09-18 10:11:30,358 [INFO] show standard_conforming_strings
+2025-09-18 10:11:30,358 [INFO] [raw sql] ()
+2025-09-18 10:11:30,359 [INFO] BEGIN (implicit)
+2025-09-18 10:11:30,362 [INFO] SELECT projects.id, projects.user_id, projects.name, projects.feed_url, projects.frame_image, projects.pos_x, projects.pos_y, projects.width, projects.height, projects.created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:30,362 [INFO] [generated in 0.00008s] (3,)
+2025-09-18 10:11:30,363 [INFO] [DB] Found project: id=3, name=Default project, feed_url=https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:11:30,363 [INFO] [DB] Frame coords: x=118, y=127, w=557, h=460
+2025-09-18 10:11:30,364 [INFO] [FEED] Downloading feed: https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml
+2025-09-18 10:11:30,390 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:30,467 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059140d0>
+2025-09-18 10:11:30,467 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x105908320> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:30,551 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105932850>
+2025-09-18 10:11:30,551 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:30,551 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:30,551 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:30,551 [DEBUG] send_request_body.complete
+2025-09-18 10:11:30,551 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,067 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:31 GMT'), (b'Content-Type', b'text/xml'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'faH7h6tbLOtzh7AiM8gEJg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:22:52 GMT'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=l7GFcqBhQXblDL9pDGdVp03MHnBfAzH7y8HZrp2%2B7YuvNK8x4ol9e52JR3hZ60dOkZ8hs8W1TWHmt9gYhdd2qgeDSuICbufHARmMvQliKQ%3D%3D"}]}'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'5f36afa3-a01e-005b-486b-2836ee000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'cf-cache-status', b'DYNAMIC'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Content-Encoding', b'zstd'), (b'CF-RAY', b'980f0799cc45f5b8-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:31,068 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/CaseStudyFeed.xml "HTTP/1.1 200 OK"
+2025-09-18 10:11:31,068 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,068 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:31,068 [DEBUG] response_closed.started
+2025-09-18 10:11:31,068 [DEBUG] response_closed.complete
+2025-09-18 10:11:31,068 [DEBUG] close.started
+2025-09-18 10:11:31,068 [DEBUG] close.complete
+2025-09-18 10:11:31,068 [INFO] [FEED] Downloaded 1729 chars
+2025-09-18 10:11:31,068 [INFO] [FEED] Parsed XML, found 11 entries
+2025-09-18 10:11:31,069 [INFO] [FS] Output dir ready: media/outputs/3
+2025-09-18 10:11:31,083 [INFO] [FRAME] Loaded frame media/frames/sampleFrame.jpg size=1080x1080
+2025-09-18 10:11:31,083 [INFO] [ITEM 1] Start product_id=000000101929043004, url=https://cdn.goanalytix.io/assets/casestudy/images/1.jpg
+2025-09-18 10:11:31,090 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:31,164 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059d1bd0>
+2025-09-18 10:11:31,164 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590ab10> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:31,242 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059d1b10>
+2025-09-18 10:11:31,242 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,242 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:31,242 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,243 [DEBUG] send_request_body.complete
+2025-09-18 10:11:31,243 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,326 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'156270'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'f8mT77IP23nPAxrVn8T6sA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE38FE059'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'6f02b838-e01e-0017-786a-28a6de000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'445'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=T%2F6TjUxzKF%2FtVF5ry8YgMTSDiDwBN4OLyclhEZVmGpux4csmIxhQqdbamzJjK84XL1JzZDsB2y23Pd%2BwCy4mPUqUEPqEU48cjcup2p6SI8Uy"}]}'), (b'CF-RAY', b'980f079e1ceb9711-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:31,327 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/1.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:31,327 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,406 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:31,406 [DEBUG] response_closed.started
+2025-09-18 10:11:31,406 [DEBUG] response_closed.complete
+2025-09-18 10:11:31,407 [DEBUG] close.started
+2025-09-18 10:11:31,407 [DEBUG] close.complete
+2025-09-18 10:11:31,407 [INFO] [ITEM 1] Downloaded 156270 bytes
+2025-09-18 10:11:31,417 [INFO] [ITEM 1] Opened product image size=1200x1800
+2025-09-18 10:11:31,436 [INFO] [ITEM 1] Resized to 557x460
+2025-09-18 10:11:31,437 [INFO] [ITEM 1] Composited at (118, 127)
+2025-09-18 10:11:31,470 [INFO] [ITEM 1] Saved media/outputs/3/000000101929043004_20250918_071131.png
+2025-09-18 10:11:31,471 [INFO] ROLLBACK
+2025-09-18 10:11:31,471 [ERROR] [ITEM 1] ERROR: 'file_path' is an invalid keyword argument for OutputImage
+2025-09-18 10:11:31,471 [INFO] [ITEM 2] Start product_id=000000101929043005, url=https://cdn.goanalytix.io/assets/casestudy/images/2.jpg
+2025-09-18 10:11:31,476 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:31,550 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059d0d90>
+2025-09-18 10:11:31,550 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b260> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:31,629 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059d3810>
+2025-09-18 10:11:31,629 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,630 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:31,630 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,630 [DEBUG] send_request_body.complete
+2025-09-18 10:11:31,630 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,716 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:31 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'179348'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'l9E5SA2kWwNPzNXgya/+RA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE39118AD'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'3863c997-f01e-0079-6f6a-28f3f1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'444'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=xq5D2RCnRjua3WFu0al8OOzvcyXkTQb%2FhIOecnuxBrO5AOLXaHdE1WhVRDDYE5I81jALrfoifTbfVjtD7aknz%2BAasChNSLVDiNi1TjwRHLBc"}]}'), (b'CF-RAY', b'980f07a0893cdac7-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:31,717 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/2.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:31,718 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,795 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:31,796 [DEBUG] response_closed.started
+2025-09-18 10:11:31,796 [DEBUG] response_closed.complete
+2025-09-18 10:11:31,796 [DEBUG] close.started
+2025-09-18 10:11:31,797 [DEBUG] close.complete
+2025-09-18 10:11:31,797 [INFO] [ITEM 2] Downloaded 179348 bytes
+2025-09-18 10:11:31,809 [INFO] [ITEM 2] Opened product image size=1200x1800
+2025-09-18 10:11:31,810 [INFO] BEGIN (implicit)
+2025-09-18 10:11:31,811 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:31,811 [INFO] [generated in 0.00015s] (3,)
+2025-09-18 10:11:31,812 [INFO] ROLLBACK
+2025-09-18 10:11:31,812 [ERROR] [ITEM 2] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:31,812 [INFO] [ITEM 3] Start product_id=000000101929045001, url=https://cdn.goanalytix.io/assets/casestudy/images/3.jpg
+2025-09-18 10:11:31,823 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:31,902 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059e9810>
+2025-09-18 10:11:31,902 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b380> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:31,986 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059e9750>
+2025-09-18 10:11:31,987 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:31,987 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:31,987 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:31,987 [DEBUG] send_request_body.complete
+2025-09-18 10:11:31,987 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:32,073 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:32 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'137393'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'JNdyX2eV2Q+8SmoteKgCAw=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:04 GMT'), (b'ETag', b'0x8DDE96AE364DEEA'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c336158b-101e-0013-5b6a-282bd9000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'443'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EwUz2tU16Kq6f77JKr7KWZAes2%2Bpaqw6zLsaBrak%2FOQ%2FNrUxL4K6YxxwoA1Wf4HiwLcdBpOZXdzZZH4SNLqsUAfUG6KL%2F4pjmWjtHZ1%2F%2Brv2"}]}'), (b'CF-RAY', b'980f07a2c83eb145-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:32,073 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/3.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:32,073 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:32,154 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:32,154 [DEBUG] response_closed.started
+2025-09-18 10:11:32,154 [DEBUG] response_closed.complete
+2025-09-18 10:11:32,154 [DEBUG] close.started
+2025-09-18 10:11:32,154 [DEBUG] close.complete
+2025-09-18 10:11:32,154 [INFO] [ITEM 3] Downloaded 137393 bytes
+2025-09-18 10:11:32,159 [INFO] [ITEM 3] Opened product image size=1200x1800
+2025-09-18 10:11:32,159 [INFO] BEGIN (implicit)
+2025-09-18 10:11:32,160 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:32,160 [INFO] [cached since 0.3489s ago] (3,)
+2025-09-18 10:11:32,160 [INFO] ROLLBACK
+2025-09-18 10:11:32,160 [ERROR] [ITEM 3] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:32,160 [INFO] [ITEM 4] Start product_id=000000101929045002, url=https://cdn.goanalytix.io/assets/casestudy/images/4.jpg
+2025-09-18 10:11:32,166 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:32,241 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059dd290>
+2025-09-18 10:11:32,241 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b260> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:32,321 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105527890>
+2025-09-18 10:11:32,321 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:32,321 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:32,321 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:32,321 [DEBUG] send_request_body.complete
+2025-09-18 10:11:32,321 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:32,409 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:32 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154288'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'AxPGgOMB/95Ye+cUR/p6Qg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE41180DC'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'4334d558-901e-0032-216a-280fa2000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'443'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=yeQFd%2B2YWFgoGC0Nfordf10%2F3bhQdK5zh1xSp%2BtX2Xs1TZ4xDpExSEyK2FV7%2BUmDhDLYq%2BvSGtLSj4RZNeBtH11colpNkjTHWAZDI10knYnC"}]}'), (b'CF-RAY', b'980f07a4d9390b5c-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:32,409 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/4.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:32,409 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:32,489 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:32,489 [DEBUG] response_closed.started
+2025-09-18 10:11:32,489 [DEBUG] response_closed.complete
+2025-09-18 10:11:32,489 [DEBUG] close.started
+2025-09-18 10:11:32,489 [DEBUG] close.complete
+2025-09-18 10:11:32,489 [INFO] [ITEM 4] Downloaded 154288 bytes
+2025-09-18 10:11:32,499 [INFO] [ITEM 4] Opened product image size=1200x1800
+2025-09-18 10:11:32,500 [INFO] BEGIN (implicit)
+2025-09-18 10:11:32,500 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:32,500 [INFO] [cached since 0.6886s ago] (3,)
+2025-09-18 10:11:32,500 [INFO] ROLLBACK
+2025-09-18 10:11:32,500 [ERROR] [ITEM 4] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:32,500 [INFO] [ITEM 5] Start product_id=000000101929045003, url=https://cdn.goanalytix.io/assets/casestudy/images/5.jpg
+2025-09-18 10:11:32,508 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:32,586 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059f5f50>
+2025-09-18 10:11:32,586 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b5c0> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:32,673 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059f5e90>
+2025-09-18 10:11:32,673 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:32,673 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:32,673 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:32,673 [DEBUG] send_request_body.complete
+2025-09-18 10:11:32,673 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:32,759 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:32 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'149245'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'5uudmqsNFwIQ+PcN6Yc8zA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3ABA1BC'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'8a52b362-801e-004c-7c6a-289fe5000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'442'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ixaPiHLkwCM4%2BrUTq%2BXFfiwHkdN%2BG9I8RF8SlosRVlDIvXIF48%2B1mcc5vDF3J1BXsdIjrwybaX2sLwG0B0uGZunLTGWrR0839qibvJwWE7b9"}]}'), (b'CF-RAY', b'980f07a70fa3d251-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:32,760 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/5.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:32,761 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:33,003 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:33,003 [DEBUG] response_closed.started
+2025-09-18 10:11:33,003 [DEBUG] response_closed.complete
+2025-09-18 10:11:33,004 [DEBUG] close.started
+2025-09-18 10:11:33,004 [DEBUG] close.complete
+2025-09-18 10:11:33,004 [INFO] [ITEM 5] Downloaded 149245 bytes
+2025-09-18 10:11:33,013 [INFO] [ITEM 5] Opened product image size=1200x1800
+2025-09-18 10:11:33,014 [INFO] BEGIN (implicit)
+2025-09-18 10:11:33,014 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:33,014 [INFO] [cached since 1.203s ago] (3,)
+2025-09-18 10:11:33,014 [INFO] ROLLBACK
+2025-09-18 10:11:33,014 [ERROR] [ITEM 5] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:33,014 [INFO] [ITEM 6] Start product_id=000000101929045004, url=https://cdn.goanalytix.io/assets/casestudy/images/6.jpg
+2025-09-18 10:11:33,023 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:33,109 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105f04e50>
+2025-09-18 10:11:33,109 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b650> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:33,197 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059f6750>
+2025-09-18 10:11:33,197 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:33,198 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:33,198 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:33,198 [DEBUG] send_request_body.complete
+2025-09-18 10:11:33,198 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:33,289 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:33 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'138596'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'zLtCvwND43NRgGJqwTS/9A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE45906E1'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'05a4b66c-b01e-0035-476a-2863c1000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'441'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=uG5tHltAqd1qlZr3otVB3VnYflTCkVpsU9EjKVzGAq22SkNJOBlV%2FFgLs3UGswKXGRz72tdYeW%2BeNabRWm1QLLmtoVejHskTepuUpToeeVsF"}]}'), (b'CF-RAY', b'980f07aa5c32fff9-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:33,290 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/6.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:33,290 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:33,935 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:33,935 [DEBUG] response_closed.started
+2025-09-18 10:11:33,935 [DEBUG] response_closed.complete
+2025-09-18 10:11:33,935 [DEBUG] close.started
+2025-09-18 10:11:33,935 [DEBUG] close.complete
+2025-09-18 10:11:33,936 [INFO] [ITEM 6] Downloaded 138596 bytes
+2025-09-18 10:11:33,945 [INFO] [ITEM 6] Opened product image size=1200x1800
+2025-09-18 10:11:33,945 [INFO] BEGIN (implicit)
+2025-09-18 10:11:33,945 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:33,945 [INFO] [cached since 2.134s ago] (3,)
+2025-09-18 10:11:33,948 [INFO] ROLLBACK
+2025-09-18 10:11:33,948 [ERROR] [ITEM 6] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:33,948 [INFO] [ITEM 7] Start product_id=000000101929045005, url=https://cdn.goanalytix.io/assets/casestudy/images/7.jpg
+2025-09-18 10:11:33,956 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:34,036 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059de150>
+2025-09-18 10:11:34,036 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b530> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:34,122 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059dfad0>
+2025-09-18 10:11:34,122 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:34,122 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:34,122 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:34,122 [DEBUG] send_request_body.complete
+2025-09-18 10:11:34,122 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:34,216 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:34 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'154138'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'Tm3kdU8IAQRrYIBvgIBonA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:05 GMT'), (b'ETag', b'0x8DDE96AE3FE49BD'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'508dac52-201e-006a-136a-28d7fd000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'441'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=bWc80P58q4jxXN4MtesImWKHbrv9Jc6qjhZQpdYOXK%2Fp4t%2Fw5FTA%2FnRh80x0KGEm5TTLwxVLqfZuOWqfH2GTZl%2BVM0JxfcBnNFrqgxtUDDZX"}]}'), (b'CF-RAY', b'980f07b01e58fe98-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:34,216 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/7.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:34,216 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:34,509 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:34,510 [DEBUG] response_closed.started
+2025-09-18 10:11:34,510 [DEBUG] response_closed.complete
+2025-09-18 10:11:34,511 [DEBUG] close.started
+2025-09-18 10:11:34,511 [DEBUG] close.complete
+2025-09-18 10:11:34,511 [INFO] [ITEM 7] Downloaded 154138 bytes
+2025-09-18 10:11:34,523 [INFO] [ITEM 7] Opened product image size=1200x1800
+2025-09-18 10:11:34,524 [INFO] BEGIN (implicit)
+2025-09-18 10:11:34,524 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:34,524 [INFO] [cached since 2.713s ago] (3,)
+2025-09-18 10:11:34,524 [INFO] ROLLBACK
+2025-09-18 10:11:34,524 [ERROR] [ITEM 7] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:34,524 [INFO] [ITEM 8] Start product_id=000000101929049001, url=https://cdn.goanalytix.io/assets/casestudy/images/8.jpg
+2025-09-18 10:11:34,533 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:34,614 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059f4890>
+2025-09-18 10:11:34,614 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b770> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:35,123 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059f5050>
+2025-09-18 10:11:35,124 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:35,124 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:35,125 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:35,125 [DEBUG] send_request_body.complete
+2025-09-18 10:11:35,125 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:35,217 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:35 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'160299'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'qBDAKcDQsyVqhBYWOUOZSg=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE433A9F5'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'3264f817-b01e-000a-4d6a-28ab62000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'440'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GjeWZgXwjJLmj2%2F%2BXA4GY8JWDfbY%2BzNh9%2B9DqnSu8fkznh2wLFCJ5%2Bj8JXJffcVgXucNCzGsLhYz3k3RNmFNeZVGx430y9%2BqR%2BxttqVny%2Fgu"}]}'), (b'CF-RAY', b'980f07b66a9566c0-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:35,218 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/8.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:35,218 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:35,739 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:35,739 [DEBUG] response_closed.started
+2025-09-18 10:11:35,739 [DEBUG] response_closed.complete
+2025-09-18 10:11:35,739 [DEBUG] close.started
+2025-09-18 10:11:35,740 [DEBUG] close.complete
+2025-09-18 10:11:35,740 [INFO] [ITEM 8] Downloaded 160299 bytes
+2025-09-18 10:11:35,748 [INFO] [ITEM 8] Opened product image size=1200x1800
+2025-09-18 10:11:35,748 [INFO] BEGIN (implicit)
+2025-09-18 10:11:35,749 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:35,749 [INFO] [cached since 3.937s ago] (3,)
+2025-09-18 10:11:35,749 [INFO] ROLLBACK
+2025-09-18 10:11:35,749 [ERROR] [ITEM 8] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:35,749 [INFO] [ITEM 9] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/9.jpg
+2025-09-18 10:11:35,757 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:35,837 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105f07450>
+2025-09-18 10:11:35,837 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b9b0> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:36,452 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105f07390>
+2025-09-18 10:11:36,453 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:36,454 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:36,454 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:36,454 [DEBUG] send_request_body.complete
+2025-09-18 10:11:36,454 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:36,544 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:36 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'159203'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'ewWY6dMtwM9phe6FGO239w=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE458DFD3'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'e25ec6f8-301e-0049-7a6a-284d3e000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'440'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0%2FzA2bl8zx6VW0paMpydWHsEODdV0xp40cwW2h%2B8umHBIW9nS6J5rItDp5S7jN9g4ew8fyGC%2BA9n29lWWpFotyZWtaNzuEb8K7v6nUlIbHsk"}]}'), (b'CF-RAY', b'980f07beab53db35-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:36,544 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/9.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:36,544 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:36,941 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:36,941 [DEBUG] response_closed.started
+2025-09-18 10:11:36,941 [DEBUG] response_closed.complete
+2025-09-18 10:11:36,942 [DEBUG] close.started
+2025-09-18 10:11:36,942 [DEBUG] close.complete
+2025-09-18 10:11:36,943 [INFO] [ITEM 9] Downloaded 159203 bytes
+2025-09-18 10:11:36,954 [INFO] [ITEM 9] Opened product image size=1200x1800
+2025-09-18 10:11:36,955 [INFO] BEGIN (implicit)
+2025-09-18 10:11:36,955 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:36,955 [INFO] [cached since 5.144s ago] (3,)
+2025-09-18 10:11:36,955 [INFO] ROLLBACK
+2025-09-18 10:11:36,955 [ERROR] [ITEM 9] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:36,955 [INFO] [ITEM 10] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/10.jpg
+2025-09-18 10:11:36,964 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:37,051 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105f15fd0>
+2025-09-18 10:11:37,051 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b920> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:37,145 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x105f15f10>
+2025-09-18 10:11:37,146 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:37,146 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:37,146 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:37,147 [DEBUG] send_request_body.complete
+2025-09-18 10:11:37,147 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:37,250 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:37 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'133560'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'MTBuHpGH4Wsa80wm245lHA=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE4831E16'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'18f20d75-201e-0037-736a-28dd79000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'440'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=z7BYtg%2B7uHpb25lQDI6P61%2BGeRmp%2B14yN16kYUHhbRVtLt12NDfA%2BqSBE%2BVrECF7SjyHdx0eVphhMz2HlProhGjFjSk91Av8ix9xzaeuhk6P"}]}'), (b'CF-RAY', b'980f07c30d1b0ead-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:37,251 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/10.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:37,251 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:37,344 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:37,344 [DEBUG] response_closed.started
+2025-09-18 10:11:37,344 [DEBUG] response_closed.complete
+2025-09-18 10:11:37,344 [DEBUG] close.started
+2025-09-18 10:11:37,345 [DEBUG] close.complete
+2025-09-18 10:11:37,345 [INFO] [ITEM 10] Downloaded 133560 bytes
+2025-09-18 10:11:37,354 [INFO] [ITEM 10] Opened product image size=1200x1800
+2025-09-18 10:11:37,354 [INFO] BEGIN (implicit)
+2025-09-18 10:11:37,355 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:37,355 [INFO] [cached since 5.543s ago] (3,)
+2025-09-18 10:11:37,355 [INFO] ROLLBACK
+2025-09-18 10:11:37,355 [ERROR] [ITEM 10] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:37,355 [INFO] [ITEM 11] Start product_id=000000101929049003, url=https://cdn.goanalytix.io/assets/casestudy/images/11.jpg
+2025-09-18 10:11:37,363 [DEBUG] connect_tcp.started host='cdn.goanalytix.io' port=443 local_address=None timeout=5.0 socket_options=None
+2025-09-18 10:11:37,443 [DEBUG] connect_tcp.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059dda50>
+2025-09-18 10:11:37,444 [DEBUG] start_tls.started ssl_context=<ssl.SSLContext object at 0x10590b890> server_hostname='cdn.goanalytix.io' timeout=5.0
+2025-09-18 10:11:37,534 [DEBUG] start_tls.complete return_value=<httpcore._backends.anyio.AnyIOStream object at 0x1059dd350>
+2025-09-18 10:11:37,535 [DEBUG] send_request_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:37,535 [DEBUG] send_request_headers.complete
+2025-09-18 10:11:37,536 [DEBUG] send_request_body.started request=<Request [b'GET']>
+2025-09-18 10:11:37,536 [DEBUG] send_request_body.complete
+2025-09-18 10:11:37,536 [DEBUG] receive_response_headers.started request=<Request [b'GET']>
+2025-09-18 10:11:37,628 [DEBUG] receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Thu, 18 Sep 2025 07:11:37 GMT'), (b'Content-Type', b'image/jpeg'), (b'Content-Length', b'72335'), (b'Connection', b'keep-alive'), (b'Content-MD5', b'bQbp/9n/vDHvK951c8VU+A=='), (b'Last-Modified', b'Mon, 01 Sep 2025 15:19:06 GMT'), (b'ETag', b'0x8DDE96AE47F751B'), (b'Server', b'cloudflare'), (b'x-ms-request-id', b'c7d004e0-001e-0020-526a-287472000000'), (b'x-ms-version', b'2009-09-19'), (b'x-ms-lease-status', b'unlocked'), (b'x-ms-blob-type', b'BlockBlob'), (b'Age', b'439'), (b'Cache-Control', b'max-age=120'), (b'cf-cache-status', b'HIT'), (b'Nel', b'{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'), (b'Vary', b'accept-encoding'), (b'Report-To', b'{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=CvpCXQ1ce7q54ixq0Lp4Dk54a%2Bja9jy7YOjL1mZ3SLwkbp6r7reXf7KyJsd5LjtespdVnDjeXT19Cz6YVRX5ftIKJey%2BU6H87oPt3OLl%2BHXw"}]}'), (b'CF-RAY', b'980f07c568ba0ea4-AMS'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2025-09-18 10:11:37,629 [INFO] HTTP Request: GET https://cdn.goanalytix.io/assets/casestudy/images/11.jpg "HTTP/1.1 200 OK"
+2025-09-18 10:11:37,630 [DEBUG] receive_response_body.started request=<Request [b'GET']>
+2025-09-18 10:11:37,816 [DEBUG] receive_response_body.complete
+2025-09-18 10:11:37,816 [DEBUG] response_closed.started
+2025-09-18 10:11:37,816 [DEBUG] response_closed.complete
+2025-09-18 10:11:37,817 [DEBUG] close.started
+2025-09-18 10:11:37,818 [DEBUG] close.complete
+2025-09-18 10:11:37,818 [INFO] [ITEM 11] Downloaded 72335 bytes
+2025-09-18 10:11:37,829 [INFO] [ITEM 11] Opened product image size=1200x1800
+2025-09-18 10:11:37,830 [INFO] BEGIN (implicit)
+2025-09-18 10:11:37,830 [INFO] SELECT projects.id AS projects_id, projects.user_id AS projects_user_id, projects.name AS projects_name, projects.feed_url AS projects_feed_url, projects.frame_image AS projects_frame_image, projects.pos_x AS projects_pos_x, projects.pos_y AS projects_pos_y, projects.width AS projects_width, projects.height AS projects_height, projects.created_at AS projects_created_at 
+FROM projects 
+WHERE projects.id = $1::INTEGER
+2025-09-18 10:11:37,830 [INFO] [cached since 6.019s ago] (3,)
+2025-09-18 10:11:37,830 [INFO] ROLLBACK
+2025-09-18 10:11:37,830 [ERROR] [ITEM 11] ERROR: greenlet_spawn has not been called; can't call await_only() here. Was IO attempted in an unexpected place? (Background on this error at: https://sqlalche.me/e/20/xd2s)
+2025-09-18 10:11:37,830 [INFO] [SUMMARY] total=11, success=0, failed=11
