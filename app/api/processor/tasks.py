@@ -4,13 +4,10 @@ import xml.etree.ElementTree as ET
 import logging
 import httpx
 from celery import Celery
-from PIL import Image, ImageDraw   # 🔹 ImageDraw eklendi
+from PIL import Image, ImageDraw
 from io import BytesIO
 from datetime import datetime
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy import create_engine
 from app.db.models import Project, OutputImage
-
 from app.db.db_sync import SessionLocalSync
 
 # ✅ Logging
@@ -46,13 +43,13 @@ def _rounded(im: Image.Image, radius: int) -> Image.Image:
 
 
 @celery_app.task
-def process_project_task(project_id: int):
-    logger.info(f"[TASK START] Project {project_id}")
-    _process_project(project_id)
+def process_project_task(project_id: int, coords: dict = None):
+    logger.info(f"[TASK START] Project {project_id}, coords={coords}")
+    _process_project(project_id, coords)
     logger.info(f"[TASK END] Project {project_id}")
 
 
-def _process_project(project_id: int):
+def _process_project(project_id: int, coords: dict = None):
     db = SessionLocalSync()
     try:
         logger.info(f"[DB] Looking for project {project_id}")
@@ -61,8 +58,25 @@ def _process_project(project_id: int):
             logger.error(f"[ERROR] Project {project_id} not found.")
             return
 
-        logger.info(f"[DB] Found project: id={project.id}, name={project.name}, feed_url={project.feed_url}")
-        logger.info(f"[DB] Frame coords: x={project.pos_x}, y={project.pos_y}, w={project.width}, h={project.height}")
+        logger.info(
+            f"[DB] Found project: id={project.id}, name={project.name}, feed_url={project.feed_url}"
+        )
+
+        # Koordinatları seç
+        if coords:
+            new_w = int(coords.get("width", project.width))
+            new_h = int(coords.get("height", project.height))
+            pos_x = int(coords.get("pos_x", project.pos_x))
+            pos_y = int(coords.get("pos_y", project.pos_y))
+            radius = int(coords.get("radius", project.radius or 0))
+        else:
+            new_w = int(project.width)
+            new_h = int(project.height)
+            pos_x = int(project.pos_x)
+            pos_y = int(project.pos_y)
+            radius = int(getattr(project, "radius", 0) or 0)
+
+        logger.info(f"[FRAME COORDS] x={pos_x}, y={pos_y}, w={new_w}, h={new_h}, r={radius}")
 
         # Feed indir
         try:
@@ -118,20 +132,13 @@ def _process_project(project_id: int):
                 prod = Image.open(BytesIO(r.content)).convert("RGBA")
                 logger.info(f"[ITEM {idx}] Opened product image size={prod.width}x{prod.height}")
 
-                # ✅ Frontend piksel değerlerini gönderiyor
-                new_w = int(project.width)
-                new_h = int(project.height)
-                pos_x = int(project.pos_x)
-                pos_y = int(project.pos_y)
-                radius = int(getattr(project, "radius", 0) or 0)
-
                 # resize
                 prod_resized = prod.resize((new_w, new_h), Image.LANCZOS)
 
                 # köşeleri yuvarla
                 prod_resized = _rounded(prod_resized, radius)
 
-                # clamp (taşmayı engelle)
+                # clamp
                 max_x = max(0, frame.width - new_w)
                 max_y = max(0, frame.height - new_h)
                 pos_x = max(0, min(pos_x, max_x))
